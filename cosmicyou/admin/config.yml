@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: xiaoran079/cosmic-you
+  name: turbo-github
+  turbo_site_id: d08a20e2-3ffa-4bad-8fd3-eb64eaabe5fa
   branch: main
 
 media_folder: "assets/uploads"
