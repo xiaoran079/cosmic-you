@@ -1,0 +1,58 @@
+
+name: Update Cosmic Journal
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'cosmicyou/blog/posts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-blog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate posts.json
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          posts_dir = Path("cosmicyou/blog/posts")
+          manifest = Path("cosmicyou/blog/posts.json")
+
+          slugs = sorted(
+              p.stem
+              for p in posts_dir.glob("*.md")
+              if p.is_file()
+          )
+
+          manifest.write_text(
+              json.dumps(slugs, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8"
+          )
+
+          print(f"Found {len(slugs)} articles.")
+          PY
+
+      - name: Commit updated article list
+        run: |
+          if git diff --quiet -- cosmicyou/blog/posts.json; then
+            echo "Article list is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add cosmicyou/blog/posts.json
+          git commit -m "Automatically update Cosmic Journal articles"
+          git push
