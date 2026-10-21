@@ -1,0 +1,28 @@
+# IMPORTANT: replace OWNER/REPO and configure a GitHub OAuth authentication service.
+# This admin page is not usable until GitHub authentication is configured.
+backend:
+  name: github
+  repo: OWNER/REPO
+  branch: main
+  # base_url: https://YOUR-OAUTH-SERVICE.example
+  # auth_endpoint: auth
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+site_url: "https://YOUR-SITE.netlify.app"
+display_url: "https://YOUR-SITE.netlify.app"
+collections:
+  - name: "posts"
+    label: "Journal Articles"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Career", "Love", "Self-Discovery", "Weekly Horoscope"]}
+      - {label: "Publication date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Short description", name: "excerpt", widget: "text"}
+      - {label: "Cover image", name: "cover", widget: "image", required: false}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Article", name: "body", widget: "markdown"}

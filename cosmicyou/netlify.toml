@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+  command = "python3 scripts/build_index.py"
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
