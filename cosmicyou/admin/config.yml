@@ -3,7 +3,7 @@ backend:
   turbo_site_id: d08a20e2-3ffa-4bad-8fd3-eb64eaabe5fa
   branch: main
 
-media_folder: "assets/uploads"
+media_folder: "cosmicyou/assets/uploads"
 public_folder: "/assets/uploads"
 
 site_url: "https://cosmicyou.netlify.app"
@@ -11,7 +11,7 @@ display_url: "https://cosmicyou.netlify.app"
 collections:
   - name: "posts"
     label: "Journal Articles"
-    folder: "blog/posts"
+    folder: "cosmicyou/blog/posts"
     create: true
     slug: "{{slug}}"
     extension: "md"
