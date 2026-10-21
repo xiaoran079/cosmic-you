@@ -1,15 +1,13 @@
-# IMPORTANT: replace OWNER/REPO and configure a GitHub OAuth authentication service.
-# This admin page is not usable until GitHub authentication is configured.
 backend:
   name: github
-  repo: OWNER/REPO
+  repo: xiaoran079/cosmic-you
   branch: main
-  # base_url: https://YOUR-OAUTH-SERVICE.example
-  # auth_endpoint: auth
+
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-site_url: "https://YOUR-SITE.netlify.app"
-display_url: "https://YOUR-SITE.netlify.app"
+
+site_url: "https://cosmicyou.netlify.app"
+display_url: "https://cosmicyou.netlify.app"
 collections:
   - name: "posts"
     label: "Journal Articles"
