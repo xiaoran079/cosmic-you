@@ -118,4 +118,19 @@ function renderMatch(){let a=profile.sign,b=partner.value,ia=Object.keys(data).i
 const partner=document.getElementById('partner');Object.keys(data).forEach(s=>{let opt=document.createElement('option');opt.value=s;opt.textContent=s;partner.append(opt)});document.getElementById('match-btn').addEventListener('click',renderMatch);document.getElementById('birthdate').max=new Date().toISOString().slice(0,10);
 
 const pageObserver=new MutationObserver(()=>{document.querySelectorAll('#app > section:not(.hidden)').forEach(el=>{if(el.dataset.activeTransition!=='yes'){el.dataset.activeTransition='yes';el.classList.remove('page-enter');void el.offsetWidth;el.classList.add('page-enter')}});document.querySelectorAll('#app > section.hidden').forEach(el=>el.dataset.activeTransition='no')});pageObserver.observe(document.getElementById('app'),{attributes:true,subtree:true,attributeFilter:['class']});
-</script></body></html>
+</script>
+<!-- Default Statcounter code for Cosmic You https://cosmicyou.netlify.app -->
+<script type="text/javascript">
+var sc_project=13361601;
+var sc_invisible=1;
+var sc_security="18f93314";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13361601/0/18f93314/1/" alt="Web Analytics"
+referrerpolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>
