@@ -6,4 +6,19 @@ function parseFrontmatter(text){const m=text.match(/^---\s*\n([\s\S]*?)\n---\s*\
 function renderList(){qs('#listing').hidden=false;qs('#article').hidden=true;qs('#filters').innerHTML=categories.map(c=>`<button class="${c===selected?'active':''}" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</button>`).join('');const visible=posts.filter(p=>selected==='All'||p.category===selected);qs('#cards').innerHTML=visible.map(p=>`<a class="card" href="?post=${encodeURIComponent(p.slug)}"><div class="cover">${p.cover?`<img src="${escapeHtml(p.cover)}" alt="">`:icons[p.category]||'✦'}</div><div class="card-body"><div class="category">${escapeHtml(p.category)}</div><h2>${escapeHtml(p.title)}</h2><p>${escapeHtml(p.excerpt)}</p><div class="meta">${escapeHtml(p.date)} · ${Math.max(1,Math.ceil(p.body.split(/\s+/).length/220))} min read</div></div></a>`).join('');qs('#empty').hidden=!!visible.length;qs('#filters').querySelectorAll('button').forEach(b=>b.onclick=()=>{selected=b.dataset.cat;renderList()})}
 function renderPost(slug){const p=posts.find(x=>x.slug===slug);if(!p){history.replaceState({},'',location.pathname);renderList();return}qs('#listing').hidden=true;qs('#article').hidden=false;const raw=window.marked?marked.parse(p.body):'<p>'+escapeHtml(p.body).replace(/\n/g,'<br>')+'</p>';const safe=window.DOMPurify?DOMPurify.sanitize(raw):escapeHtml(p.body);qs('#article').innerHTML=`<button class="back" id="back">← All stories</button><div class="category">${escapeHtml(p.category)}</div><h1>${escapeHtml(p.title)}</h1><p class="intro">${escapeHtml(p.excerpt)}</p><p class="meta">${escapeHtml(p.date)}</p><div class="article-body">${safe}</div>`;qs('#back').onclick=()=>{history.pushState({},'',location.pathname);renderList()};window.scrollTo({top:0,behavior:'smooth'})}
 async function init(){try{const manifest=await fetch('/blog/posts.json',{cache:'no-store'});if(!manifest.ok)throw Error('Post index missing');const names=await manifest.json();const results=await Promise.all(names.map(async slug=>{const res=await fetch('/blog/posts/'+encodeURIComponent(slug)+'.md');if(!res.ok)return null;const p=parseFrontmatter(await res.text());return p?{...p,slug}:null}));posts=results.filter(Boolean).filter(p=>p.draft!=='true').sort((a,b)=>b.date.localeCompare(a.date));const slug=new URLSearchParams(location.search).get('post');if(slug)renderPost(slug);else renderList()}catch(e){qs('#cards').innerHTML='<p>Could not load stories. Please try again later.</p>';console.error(e)}}window.onpopstate=()=>{const slug=new URLSearchParams(location.search).get('post');slug?renderPost(slug):renderList()};init();
-</script></body></html>
+</script>
+<!-- Default Statcounter code for Cosmic You https://cosmicyou.netlify.app -->
+<script type="text/javascript">
+var sc_project=13361601;
+var sc_invisible=1;
+var sc_security="18f93314";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13361601/0/18f93314/1/" alt="Web Analytics"
+referrerpolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>
