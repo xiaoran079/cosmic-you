@@ -2,12 +2,14 @@
 title: What does the upcoming New Moon in Scorpio mean for your sign?
 category: Weekly Horoscope
 date: 2026-10-26
-excerpt: The New Moon in Scorpio arrives on November 9, bringing themes of transformation, emotional renewal, and fresh beginnings. Discover what this lunar event could mean for your zodiac sign.
+excerpt: The New Moon in Scorpio arrives on November 9, bringing themes of
+  transformation, emotional renewal, and fresh beginnings. Discover what this
+  lunar event could mean for your zodiac sign.
 draft: false
 ---
 A powerful New Moon in Scorpio arrives on November 9 at 2:02 AM EST / 07:04 AM UTC. The theme of this New Moon focuses on intimacy, personal power, shared money, and letting go of self-limiting behaviors. On the day of this New Moon and the day after, it is an ideal time to identify and release emotional burdens and reclaim your personal authority. While every New Moon brings new beginnings, Scorpio requires us to release old habits before starting fresh.  
 
-**How to Read Your Horoscope:** Check your **Moon, Rising, and Sun signs** (in that order) to get the complete picture of this lunar energy. Don’t know your chart yet? Find yours instantly using our birth chart calculator!  
+**How to Read Your Horoscope:** Check your **Moon, Rising, and Sun signs** (in that order) to get the complete picture of this lunar energy. Don’t know your chart yet? Find yours instantly using our [birth chart calculator](https://writteninthe-stars.netlify.app/)!  
 
 **Aries: 8th House (Transformation & Shared Money)** 
 
