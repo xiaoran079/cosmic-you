@@ -2,8 +2,7 @@
 title: Mercury & Venus Go Direct on November 13. Is Love Getting a Reset?
 category: Love
 date: 2026-11-09
-excerpt: Your ex is texting, your situationship is confusing, and the universe
-  might have something to say about it.
+excerpt: Your ex is texting, your situationship is confusing, and the universe might have something to say about it.
 draft: false
 ---
 **Mercury & Venus: What’s Changing?**
