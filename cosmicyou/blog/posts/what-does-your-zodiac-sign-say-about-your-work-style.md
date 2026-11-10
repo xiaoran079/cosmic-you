@@ -4,7 +4,7 @@ category: Career
 date: 2026-11-10
 excerpt: Explore the 12 zodiac signs at work.Does your sign`s description sound
   like you?
-cover: /assets/uploads/十二星座职场图鉴.png
+cover: ""
 draft: false
 ---
   Somewhere between an accounting spreadsheet and a marketing brainstorm, I started thinking about how differently people approach work. One person wants a clear plan before getting started. Another would rather jump in and figure things out along the way. 
@@ -46,3 +46,5 @@ You question familiar routines and look for original solutions. Help others see 
   Think about the role you tend to take on at work or in a group project. Are you the one who gets things started, keeps everyone organized, asks the questions no one else thought to ask, or brings a fresh perspective? Which sign’s description felt most like you? 
 
 Curious about your birth chart? Enter your birth details on [Written in the Stars](https://writteninthe-stars.netlify.app/) to get your own chart.
+
+![](/assets/uploads/十二星座职场图鉴.png)
