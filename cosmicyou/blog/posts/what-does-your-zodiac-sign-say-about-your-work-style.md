@@ -2,8 +2,7 @@
 title: "What Does Your Zodiac Sign Say About Your Work Style? "
 category: Career
 date: 2026-11-10
-excerpt: Explore the 12 zodiac signs at work.Does your sign`s description sound
-  like you?
+excerpt: Does your sign`s description sound like you?
 cover: ""
 draft: false
 ---
